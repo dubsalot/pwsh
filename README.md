@@ -5,6 +5,24 @@ powershell doesn't support extension methods as that's just C# syntactic sugar. 
 
 
 ```csharp
+
+// extension method class
+
+public static class LoggerExtensions
+{
+    public static void LogInfo(this string message)
+    {
+        Console.WriteLine($"[INFO][extension] {DateTime.Now}: {message}");
+    }
+ 
+    public static void LogWarning(this string message)
+    {
+        Console.WriteLine($"[WARNING][extension] {DateTime.Now}: {message}");
+    }
+...
+ }
+
+// bridge class
  public class LoggerExtensionsBridge
     {
 
