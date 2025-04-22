@@ -1,6 +1,7 @@
 #!/usr/bin/env pwsh
 
 
+
 # Path to your compiled DLL
 $dllPath = "/workspaces/pwsh/src/LoggingDemo/dubs.logging/bin/Debug/net8.0/dubs.logging.dll"
 
@@ -17,6 +18,22 @@ $logger.Error("This is an error message")
 $logger.Debug("This is a debug message")
 $logger.Critical("This is a critical message")
 $logger.Trace("This is a trace message")
+
+
+
+# load the functions for the static methods
+. "/workspaces/pwsh/src/scripts/static-logger.ps1"
+
+
+
+# now use the static methods
+Info("This is an info message")
+Warn("This is a warning message")
+ErrorM("This is an error message")
+Debug("This is a debug message")
+Critical("This is a critical message")
+Trace("This is a trace message")
+
 
 $logger.Info("Press any key to exit...")
 
